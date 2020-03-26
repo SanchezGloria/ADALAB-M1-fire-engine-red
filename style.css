@@ -1,0 +1,80 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* MAIN */
+
+.main {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #cc212a;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5em;
+  position: relative;
+}
+
+/* FOOTER */
+
+.container-footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer {
+  border-top: 2px solid #cc212a;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.footer div {
+  height: 50px;
+  width: 50px;
+  background: #cc212a;
+  /* en lugar de flex, se puede poner un padding top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  /* 1. se puede tener position absoluta con un contenedor position relative
+  2. colocarlo de forma relativa a si mismo y top: -40 por ej.*/
+  transform: translateY(-25px);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+}
+.footer small {
+  color: grey;
+}
+
+@media all and (min-width: 769px) {
+  .footer {
+    padding-right: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer div {
+    /* IMPORTANTE
+    se pueda hace un @media all max width 768px que englobe a los
+    estilos más raros y asi se evita p.e. poner el margin top */
+
+    margin-top: 5%;
+    order: 1;
+  }
+}
